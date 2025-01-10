@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.image-container {
+  position: fixed;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  overflow: hidden; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.cat-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.connexion-container {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  right: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.tab-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-align: center;
+  color: #555;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab:hover {
+  color: #fac93c;
+}
+
+.tab.active {
+  color: #fac93c;
+  border-bottom: 3px solid #fac93c;
+}
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 1em;
+  text-align: left;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
 }
