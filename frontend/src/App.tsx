@@ -1,26 +1,21 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const App: React.FC = () => {
-
   const [activeTab, setActiveTab] = useState<'connexion' | 'inscription'>('connexion');
 
   return (
     <>
       <div className="image-container">
-        <img
-          className="cat-picture"
-          src="/cat-picture.jpg"
-          alt="cat"
-        />
+        <img className="cat-picture" src="/cat-picture.jpg" alt="cat" />
       </div>
       <div className="connexion-container">
-      <div className="tab-container">
+        <div className="tab-container">
           <button
             className={`tab ${activeTab === 'connexion' ? 'active' : ''}`}
             onClick={() => setActiveTab('connexion')}
           >
-            Connexion    
+            Connexion
           </button>
           <button
             className={`tab ${activeTab === 'inscription' ? 'active' : ''}`}
@@ -33,21 +28,25 @@ const App: React.FC = () => {
         <form className="form">
           {activeTab === 'connexion' && (
             <>
-              <label htmlFor="nickname">Pseudo</label>
-              <input type="text" id="nickname" placeholder="Entrez votre pseudo" />
+              <label htmlFor="pseudo">Pseudo</label>
+              <input type="text" id="pseudo" placeholder="Entrez votre pseudo" />
+              <button className="submit-button">Se connecter</button>
+
             </>
           )}
 
           {activeTab === 'inscription' && (
             <>
-              <label htmlFor="nickname">Pseudo</label>
-              <input type="text" id="nickname" placeholder="Entrez votre pseudo" />
+              <label htmlFor="pseudo">Pseudo</label>
+              <input type="text" id="pseudo" placeholder="Entrez votre pseudo" />
               <label htmlFor="password">Mot de passe</label>
               <input type="password" id="password" placeholder="Entrez votre mot de passe" />
+              <button className="submit-button">S'inscrire</button>
+
             </>
           )}
         </form>
-              </div>
+      </div>
     </>
   );
 };
