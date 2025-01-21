@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './styles/App.css';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'connexion' | 'inscription'>('connexion');
@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className="image-container">
-        <img className="cat-picture" src="/cat-picture.jpg" alt="cat" />
+        <img className="cat-picture" src="/frontend/src/assets/images/cat-picture.jpg" alt="cat" />
       </div>
       <div className="connexion-container">
         <div className="tab-container">
