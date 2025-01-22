@@ -1,5 +1,5 @@
 .image-container {
-  position: fixed;
+  position: left;
   top: 0;
   width: 60%;
   height: 100%;
@@ -91,31 +91,34 @@ input {
   border-radius: 5px;
   font-size: 1em;
 }
-.navbar {
-  background-color: #333;
+nav {
+  position: top;
+  top: 0;
+  width: 100%;
+  background-color: #d87008; /* Assure-toi que la navbar est bien visible */
+  z-index: 1000; /* Assure qu'elle est au-dessus des autres éléments */
+  padding: 10px
+}
+.message-input {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background-color: white;
   padding: 10px;
+  border: 1px solid #ccc;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  padding: 5px 10px;
-}
-
-.nav-links a:hover {
-  background-color: #555;
-  border-radius: 5px;
+.messages {
+  position: absolute;
+  top: 100px; /* Sous la navbar */
+  left: 50%;
+  transform: translateX(-70%);
+  width: 50%;
+  height: calc(100% - 200px); /* Ajuste selon la taille de .message-input */
+  overflow-y: auto;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
 }

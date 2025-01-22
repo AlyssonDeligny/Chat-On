@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// @ts-ignore
 import catPicture from '../assets/images/cat-picture.jpg';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <nav style={{ backgroundColor: 'red', color: 'white', padding: '10px' }}>
+      <nav >
         <ul className="nav-links">
           <li>
             <Link to="/">Home</Link>
