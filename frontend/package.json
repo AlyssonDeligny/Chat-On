@@ -5,6 +5,7 @@
   "dependencies": {
     "@svgr/plugin-svgo": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "cra-template-typescript": "1.2.0",
     "css-select": "^5.1.0",
     "nth-check": "^2.1.1",
@@ -17,9 +18,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "vite preview"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-dom": "^19.0.3",
     "vite": "^6.0.11"
   }
 }
