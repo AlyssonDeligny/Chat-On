@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.tsx";
 // @ts-ignore
 import Chat from "./pages/Chat.tsx";
 
+
 function App() {
   return (
     <Router>
