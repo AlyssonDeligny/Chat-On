@@ -31,6 +31,9 @@ const HomePage: React.FC = () => {
     e.preventDefault();
     try {
       const response = await loginUser({ email: user.email, password: user.password });
+      // 🔥 Stocker le token dans le localStorage
+      localStorage.setItem('token', response.access_token);
+
       setMessage('Connexion réussie ! ✅ Token reçu');
       console.log('Token:', response.access_token);
     } catch (error) {
