@@ -5,11 +5,6 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  async createUser(@Body() body: { pseudo: string; email: string; password: string }) {
-    console.log('📥 Received Body for creation:', body);
-    return this.usersService.createUser(body.pseudo, body.email, body.password);
-  }
 
   @Get()
   async getUsers() {
