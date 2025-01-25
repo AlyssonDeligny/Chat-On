@@ -5,12 +5,14 @@ import { ChatGateway } from './chat/chat.gateway';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/chat-on'),
     UsersModule,
     AuthModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService, ChatGateway],
