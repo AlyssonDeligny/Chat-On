@@ -49,6 +49,10 @@ export const registerUser = async (userData: RegisterUserData) => {
 export const loginUser = async (userData: LoginUserData) => {
   try {
     const response = await api.post('/login', userData);
+    if (response.data.access_token) {
+      localStorage.setItem('token', response.data.access_token); // ✅ Stocke le token
+      window.location.href = "/chat"; // 🔥 Redirige vers le chat après connexion
+    }
     return response.data;
   } catch (error: any) {
     console.error('Error logging in:', error.response?.data || error.message);

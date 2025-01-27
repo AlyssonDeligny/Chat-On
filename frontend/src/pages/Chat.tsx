@@ -39,16 +39,6 @@ const Chat: React.FC = () => {
 
   return (
     <>
-      <nav>
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/chat">Chat</Link>
-          </li>
-        </ul>
-      </nav>
       <div className="chat-container">
         <h1>Chat</h1>
         <div className="message-input">
