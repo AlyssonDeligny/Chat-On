@@ -10,34 +10,31 @@ const HomePage: React.FC = () => {
   const [user, setUser] = useState({ pseudo: '', email: '', password: '' });
   const [message, setMessage] = useState<string>('');
 
-  // 🔥 Fonction pour gérer les changements dans les inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  // 🔥 Fonction pour gérer l'inscription
+
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await registerUser(user);
-      setMessage('Inscription réussie ! ✅');
+      setMessage('Inscription réussie !');
       console.log('Inscription réussie:', response);
     } catch (error) {
-      setMessage('Erreur lors de l’inscription ❌');
+      setMessage('Erreur lors de l’inscription');
     }
   };
 
-  // 🔥 Fonction pour gérer la connexion
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await loginUser({ email: user.email, password: user.password });
-      // 🔥 Stocker le token dans le localStorage
       localStorage.setItem('token', response.access_token);
 
-      setMessage('Connexion réussie ! ✅ Token reçu');
+      setMessage('Connexion réussie ! Token reçu');
       console.log('Token:', response.access_token);
     } catch (error) {
-      setMessage('Erreur lors de la connexion ❌');
+      setMessage('Erreur lors de la connexion');
     }
   };
 

@@ -8,7 +8,6 @@ const Chat: React.FC = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [messages, setMessages] = useState<string[]>([]);
 
-  // Fonction pour envoyer un message via le socket
   const send = (value: string) => {
     socket?.emit('message', value);
   };
@@ -17,7 +16,6 @@ const Chat: React.FC = () => {
     const newSocket = io('http://localhost:8001');
     setSocket(newSocket);
 
-    // Nettoyage : Fermer la connexion socket lors du démontage du composant
     return () => {
       newSocket.close();
     };
@@ -27,7 +25,7 @@ const Chat: React.FC = () => {
     if (!socket) return;
 
     const messageListener = (message: string) => {
-      setMessages(prev => [...prev, message]); // ✅ Utilisation de `prev` pour éviter les pertes de messages
+      setMessages(prev => [...prev, message]);
     };
 
     socket.on('message', messageListener);
