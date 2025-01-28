@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/auth'; // URL du backend
+const API_URL = 'http://localhost:3000/auth';
 
 // Fonction pour récupérer le token du localStorage
 const getToken = () => localStorage.getItem('token');
@@ -13,7 +13,7 @@ const api = axios.create({
   },
 });
 
-// 🔥 Ajout d'un `request interceptor` pour inclure le token automatiquement
+// Ajout d'un `request interceptor` pour inclure le token automatiquement
 api.interceptors.request.use((config) => {
   const token = getToken();
   if (token) {
@@ -22,7 +22,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Définition des types pour les utilisateurs
 export interface RegisterUserData {
   pseudo: string;
   email: string;
@@ -34,7 +33,6 @@ export interface LoginUserData {
   password: string;
 }
 
-// ✅ Fonction pour l'inscription (utilise `api.post` au lieu de `axios.post`)
 export const registerUser = async (userData: RegisterUserData) => {
   try {
     const response = await api.post('/register', userData);
@@ -45,28 +43,16 @@ export const registerUser = async (userData: RegisterUserData) => {
   }
 };
 
-// ✅ Fonction pour la connexion (utilise `api.post` au lieu de `axios.post`)
 export const loginUser = async (userData: LoginUserData) => {
   try {
     const response = await api.post('/login', userData);
     if (response.data.access_token) {
-      localStorage.setItem('token', response.data.access_token); // ✅ Stocke le token
-      window.location.href = "/chat"; // 🔥 Redirige vers le chat après connexion
+      localStorage.setItem('token', response.data.access_token);
+      window.location.href = "/chat";
     }
     return response.data;
   } catch (error: any) {
     console.error('Error logging in:', error.response?.data || error.message);
-    throw error;
-  }
-};
-
-// ✅ Fonction pour récupérer les infos utilisateur (protégée avec JWT)
-export const getUserProfile = async () => {
-  try {
-    const response = await api.get('/profile'); // Route protégée (exemple)
-    return response.data;
-  } catch (error: any) {
-    console.error('Error fetching user profile:', error.response?.data || error.message);
     throw error;
   }
 };

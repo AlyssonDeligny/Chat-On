@@ -22,6 +22,6 @@ export class UsersService {
 
   async deleteUser(id: string): Promise<boolean> {
     const result = await this.userModel.deleteOne({ _id: id }).exec();
-    return result.deletedCount > 0; // Retourne `true` si un utilisateur a été supprimé, `false` sinon
+    return result.deletedCount > 0;
   }
 }

@@ -10,12 +10,12 @@ import { JwtAuthGuard } from './jwt-auth.guard';
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     JwtModule.register({
-      secret: 'supersecretkey', // ⚠️ Mets une clé plus sécurisée en production
+      secret: 'supersecretkey', // à changer
       signOptions: { expiresIn: '1h' },
     }),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtAuthGuard],
-  exports: [AuthService, JwtModule, JwtAuthGuard], // Permet d'utiliser AuthService ailleurs
+  exports: [AuthService, JwtModule, JwtAuthGuard],
 })
 export class AuthModule {}

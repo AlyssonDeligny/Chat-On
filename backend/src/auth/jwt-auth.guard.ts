@@ -1,9 +1,9 @@
-import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
 
 interface AuthenticatedRequest extends Request {
-  user?: any; // Ajoute la propriété `user`
+  user?: any;
 }
 
 @Injectable()
@@ -12,13 +12,13 @@ export class JwtAuthGuard implements CanActivate {
 
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest<AuthenticatedRequest>();
-    const token = request.cookies?.token || request.headers.authorization?.split(' ')[1];
+    const token =
+      request.cookies?.token || request.headers.authorization?.split(' ')[1];
 
     if (!token) return false;
 
     try {
-      const decoded = this.jwtService.verify(token);
-      request.user = decoded;
+      request.user = this.jwtService.verify(token);
       return true;
     } catch (error) {
       return false;

@@ -8,4 +8,4 @@ export class LoginDto {
   password: string;
 }
 
-export default LoginDto; // ✅ Ajoute ceci si l'erreur persiste
+export default LoginDto;
