@@ -1,5 +1,5 @@
 ## **IRC - Internet Relay Chat**
-An Internet Relay Chat application built with **Nest.js**, **Node.js**, **Socket.IO**, and **React.js**.
+An Internet Relay Chat application built with **Nest.js**, **Typescript**, **Socket.IO**, and **React.js**.
 
 ### **Table of Contents**
 - [About the Project](#about-the-project)
@@ -16,8 +16,8 @@ An Internet Relay Chat application built with **Nest.js**, **Node.js**, **Socket
 
 ## **About the Project**
 This project is an **IRC (Internet Relay Chat)** system that communicate via real-time messaging, and manage chat rooms dynamically. It consists of:
-- A **server** built with **Node.js** and **Nest.js**, managing connections and channels.
-- A **client** built with **React.js**, providing an intuitive chat interface.
+- A **server** built with **Typescript** and **Nest.js**, managing connections and channels.
+- A **client** built with **React.js** and **Typescript** providing an intuitive chat interface.
 - **Socket.IO** for real-time communication between clients and the server.
 
 ---
@@ -57,7 +57,7 @@ npm install
 #### **Start the server**
 ```bash
 cd backend/
-npm run start:dev
+npm run start
 ```
 #### **Start the client**
 ```bash
@@ -106,8 +106,8 @@ Ensure that the test suite covers:
 ---
 
 ## **Technologies Used**
-- **Backend**: Node.js, Nest.js, Socket.IO
-- **Frontend**: React.js, HTML, CSS
+- **Backend**: Nest.js,Typescript, Socket.IO
+- **Frontend**: React.js, Typescript, HTML, CSS
 - **Database**: MongoDB, localstorage
 - **Testing**: Jest
 
