@@ -61,7 +61,7 @@ npm run start:dev
 ```
 #### **Start the client**
 ```bash
-cd frontend
+cd frontend/
 npm start
 ```
 The server will run on `http://localhost:3000`  
@@ -114,8 +114,9 @@ Ensure that the test suite covers:
 ---
 
 ## **Authors**
-- **Your Name** (@yourusername)
-- Your teammates' names
+- [Geoffrey Deparcy](https://github.com/Xyrtiel)
+- [Tiffany Gomez](https://github.com/TiffanyGomez)
+- [Alysson Deligny](https://github.com/AlyssonDeligny)
 
 ---
 
